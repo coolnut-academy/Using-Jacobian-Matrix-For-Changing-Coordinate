@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 4: The Ultimate Exam Guide</title>
+    <!-- โหลด MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- โหลด Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #2980b9;
+            --accent-color: #c0392b;
+            --success-color: #27ae60;
+            --bg-color: #f4f6f7;
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            --paper-line: #e3e3e3;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2c3e50, #2980b9);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge {
+            background: #f1c40f;
+            color: #2c3e50;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        h2 {
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #d35400;
+            margin-top: 25px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        /* Formula Card */
+        .formula-card {
+            background: #eaf2f8;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px dashed #2980b9;
+            margin: 15px 0;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        /* Exam Paper Style */
+        .exam-paper {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            position: relative;
+            background-image: linear-gradient(var(--paper-line) 1px, transparent 1px);
+            background-size: 100% 35px;
+            /* เส้นบรรทัด */
+            line-height: 35px;
+            /* จัดตัวหนังสือให้ตรงบรรทัด */
+        }
+
+        .exam-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50px;
+            width: 2px;
+            background-color: #e74c3c;
+            /* เส้นกั้นหน้าสีแดง */
+            opacity: 0.5;
+        }
+
+        .exam-content {
+            margin-left: 30px;
+            /* หลบเส้นแดง */
+            font-family: 'Sarabun', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .math-step {
+            display: block;
+            margin-bottom: 0px;
+            /* ให้ตรงเส้นบรรทัด */
+            color: #2c3e50;
+        }
+
+        .highlight-answer {
+            color: #27ae60;
+            font-weight: bold;
+            border-bottom: 2px solid #27ae60;
+            display: inline-block;
+        }
+
+        .teacher-comment {
+            font-family: 'Here', cursive;
+            /* หรือฟอนต์ลายมือถ้ามี */
+            color: #c0392b;
+            font-size: 0.9rem;
+            transform: rotate(-2deg);
+            margin-top: 10px;
+            border: 1px solid #c0392b;
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Sim */
+        .sim-container {
+            background: #34495e;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .sim-controls {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .meter-container {
+            background: #2c3e50;
+            height: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .meter-fill {
+            height: 100%;
+            width: 0%;
+            transition: width 0.2s;
+            background: #27ae60;
+        }
+
+        .variable-highlight {
+            color: #8e44ad;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #eef2f7, #dfe6f0);
+            border-radius: 10px;
+            color: #2c3e50;
+        }
+
+        .footer-credit {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #2980b9, #3498db);
+            color: white;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 100%;
+                padding: 20px 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 10px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .exam-paper {
+                padding: 20px;
+                background-size: 100% 30px;
+                line-height: 30px;
+            }
+
+            .exam-paper::before {
+                left: 30px;
+            }
+
+            .exam-content {
+                margin-left: 15px;
+                font-size: 1rem;
+            }
+
+            .math-step {
+                font-size: 0.95rem;
+            }
+
+            .sim-controls {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .home-btn {
+                position: static;
+                display: block;
+                margin: 0 auto 15px;
+                width: fit-content;
+            }
+        }
+
+        @media (max-width: 480px) {
+            section {
+                padding: 15px;
+            }
+
+            .badge {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
+
+            .exam-paper {
+                padding: 15px;
+            }
+
+            .formula-card {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            input[type="range"] {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <a href="index.html" class="home-btn">← หน้าหลัก</a>
+            <span class="badge">Phase 3 - Complete Edition</span>
+            <h1>คู่มือสูตรลัดและการประยุกต์ใช้ในการสอบ</h1>
+            <h2>Shortcut Formulas & Step-by-Step Exam Solutions</h2>
+        </header>
+
+        <!-- Part 1: The Explicit Formulas -->
+        <section>
+            <h2>1. แบไต๋สูตรลัด (The Shortcut Formulas)</h2>
+            <p>นี่คือสมการ "สำเร็จรูป" ที่เรา Pre-compute มาจากเมทริกซ์ Zone 1 (โซนค่าบวกทั้งหมด) จำแค่ 3 บรรทัดนี้
+                ใช้หากินได้ตลอดชาติครับ</p>
+
+            <div class="formula-card" style="background: #e8f8f5; border-color: #27ae60;">
+                <strong>📌 สูตรลัด Zone 1 (x+, y+, z+):</strong>
+                <br>
+                <span style="color:#7f8c8d; font-size:0.9em;">(ค่าสัมประสิทธิ์ประมาณการเพื่อการคำนวณในใจ)</span>
+                <br><br>
+                1. \( \Delta r \approx 0.5\Delta x + 0.5\Delta y + 0.707\Delta z \) <br>
+                2. \( \Delta \theta \approx 0.5\Delta x + 0.5\Delta y \mathbf{- 0.707}\Delta z \) <br>
+                3. \( \Delta \phi \approx \mathbf{-1.0}\Delta x + \mathbf{1.0}\Delta y + \mathbf{0}\Delta z \)
+            </div>
+
+            <p><strong>เทคนิคการจำ:</strong>
+                <br>• <span class="variable-highlight">รัศมี (r)</span> ชอบทุกแกน (เป็นบวกหมด)
+                <br>• <span class="variable-highlight">มุมก้มเงย (θ)</span> เกลียดแกน Z (แกน Z เป็นลบ
+                เพราะยิ่งสูงมุมยิ่งน้อย)
+                <br>• <span class="variable-highlight">มุมทิศ (φ)</span> ไม่สนแกน Z (เป็น 0) และ x กับ y
+                เครื่องหมายตรงข้ามกัน
+            </p>
+        </section>
+
+        <!-- Part 2: Detailed Walkthrough (Numeric) -->
+        <section>
+            <h2>2. ตัวอย่างโจทย์แบบตัวเลข (Numeric Problem)</h2>
+            <p>มาดูวิธีการเขียนแสดงวิธีทำในห้องสอบ เพื่อให้ได้คะแนนเต็มและตรวจสอบคำตอบได้อย่างรวดเร็ว</p>
+
+            <div class="exam-paper">
+                <div class="exam-content">
+                    <strong>📝 โจทย์ข้อที่ 1:</strong> กำหนดให้วัตถุอยู่ที่พิกัด \(A(10, 10, 10)\) เคลื่อนที่ไปที่
+                    \(B(10.2, 10.3, 10.1)\) จงหาว่ารัศมี (\(r\)) และมุมทิศ (\(\phi\)) เปลี่ยนไปประมาณเท่าใด?
+                    <br><br>
+                    <span class="math-step"><strong><u>วิธีทำ</u></strong></span>
+                    <span class="math-step"><strong>ขั้นที่ 1: หาผลต่าง (\(\Delta\)) ของแต่ละแกน</strong></span>
+                    <span class="math-step">\(\quad \Delta x = 10.2 - 10.0 = \mathbf{0.2}\)</span>
+                    <span class="math-step">\(\quad \Delta y = 10.3 - 10.0 = \mathbf{0.3}\)</span>
+                    <span class="math-step">\(\quad \Delta z = 10.1 - 10.0 = \mathbf{0.1}\)</span>
+                    <br>
+                    <span class="math-step"><strong>ขั้นที่ 2: เลือกใช้สูตรลัด (Zone 1
+                            เพราะค่าเป็นบวกทั้งหมด)</strong></span>
+                    <span class="math-step">พิจารณาหาค่า \(\Delta r\) จากสูตร:</span>
+                    <span class="math-step">\(\quad \Delta r \approx 0.5(\Delta x) + 0.5(\Delta y) + 0.707(\Delta
+                        z)\)</span>
+                    <span class="math-step">แทนค่าลงไปตรงๆ:</span>
+                    <span class="math-step">\(\quad \Delta r \approx 0.5(0.2) + 0.5(0.3) + 0.707(0.1)\)</span>
+                    <span class="math-step">\(\quad \Delta r \approx 0.10 + 0.15 + 0.0707\)</span>
+                    <span class="math-step">\(\quad \Delta r \approx \mathbf{0.3207}\) หน่วย <span
+                            class="highlight-answer">(ตอบ)</span></span>
+                    <br>
+                    <span class="math-step">พิจารณาหาค่า \(\Delta \phi\) จากสูตร:</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -1.0(\Delta x) + 1.0(\Delta y) + 0(\Delta
+                        z)\)</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -1.0(0.2) + 1.0(0.3) + 0\)</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -0.2 + 0.3\)</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx \mathbf{0.1}\) เรเดียน <span
+                            class="highlight-answer">(ตอบ)</span></span>
+
+                    <div class="teacher-comment">
+                        ✨ ยอดเยี่ยม! ไม่ต้องกดเครื่องคิดเลขหา Arccos เลย เร็วและถูกต้อง
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Detailed Walkthrough (Variable) -->
+        <section>
+            <h2>3. ตัวอย่างโจทย์แบบติดตัวแปร (Variable Problem)</h2>
+            <p>โจทย์แข่งขันหรือโจทย์มหาวิทยาลัยมักจะไม่ออกเป็นตัวเลข แต่จะออกเป็นตัวแปร เช่น \(k, \epsilon, \delta\)
+                มาดูวิธีปราบโจทย์พวกนี้ครับ</p>
+
+            <div class="exam-paper" style="background-color: #fffde7;">
+                <div class="exam-content">
+                    <strong>📝 โจทย์ข้อที่ 2:</strong> กำหนดจุด \(P\) อยู่ที่พิกัด \((x, x, x)\) หากพิกัด \(x\)
+                    เพิ่มขึ้นเล็กน้อยเป็น \(x + k\) และพิกัด \(y\) ลดลงเล็กน้อยเป็น \(x - k\) โดยที่ \(z\) คงที่
+                    จงหาว่ามุมทิศ (\(\phi\)) จะเปลี่ยนแปลงไปเท่าใดในเทอมของ \(k\)?
+                    <br><br>
+                    <span class="math-step"><strong><u>วิธีทำ</u></strong></span>
+                    <span class="math-step"><strong>ขั้นที่ 1: แปลงโจทย์เป็นภาษา \(\Delta\) (Delta
+                            Language)</strong></span>
+                    <span class="math-step">จากโจทย์กำหนดให้:</span>
+                    <span class="math-step">\(\quad \Delta x = (x + k) - x = \mathbf{+k}\)</span>
+                    <span class="math-step">\(\quad \Delta y = (x - k) - x = \mathbf{-k}\)</span>
+                    <span class="math-step">\(\quad \Delta z = 0\) (คงที่)</span>
+                    <br>
+                    <span class="math-step"><strong>ขั้นที่ 2: เลือกสูตรที่เกี่ยวข้อง</strong></span>
+                    <span class="math-step">โจทย์ถามหา \(\Delta \phi\) ใช้สูตรที่ 3 ของ Zone 1:</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx \mathbf{G}\Delta x + \mathbf{H}\Delta y +
+                        \mathbf{I}\Delta z\)</span>
+                    <span class="math-step">ค่าสัมประสิทธิ์ของ Zone 1 สำหรับ \(\phi\) คือ \([-1, 1, 0]\) ดังนั้น:</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -1(\Delta x) + 1(\Delta y) + 0(\Delta
+                        z)\)</span>
+                    <br>
+                    <span class="math-step"><strong>ขั้นที่ 3: แทนค่าตัวแปร</strong></span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -1(k) + 1(-k) + 0\)</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx -k - k\)</span>
+                    <span class="math-step">\(\quad \Delta \phi \approx \mathbf{-2k}\) เรเดียน</span>
+                    <br>
+                    <span class="math-step"><strong><u>สรุปคำตอบ:</u></strong> มุมทิศจะเปลี่ยนแปลงไป <strong>\(-2k\)
+                            เรเดียน</strong></span>
+                    <span class="math-step">(เครื่องหมายลบแสดงว่ามุมบิดไปทางขวาตามเข็มนาฬิกา) <span
+                            class="highlight-answer">(ตอบ)</span></span>
+
+                    <div class="teacher-comment">
+                        🎯 ถูกต้องตามหลัก Total Differential 100% โดยไม่ต้องเสียเวลาดิฟสมการ arctan(y/x) ให้ยุ่งยาก
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Simulation & Limitations -->
+        <section>
+            <h2>4. จุดตายและข้อจำกัด (Simulation & Limitations)</h2>
+            <p>สูตรลัดนี้เป็น "Linear Approximation" (เส้นตรง) มันจะแม่นยำก็ต่อเมื่อเราขยับ
+                <strong>ไม่ไกลจากจุดกึ่งกลาง</strong> ลองปรับค่าดูครับ
+            </p>
+
+            <div class="sim-container">
+                <div style="text-align:center; margin-bottom:15px;">
+                    <strong>ปรับระยะการขยับ (\(\Delta\)) จากจุดเดิม</strong>
+                </div>
+
+                <div class="sim-controls">
+                    <div>
+                        <label>Δx: <span id="val-dx">0.00</span></label><br>
+                        <input type="range" id="rng-dx" min="0" max="0.5" step="0.01" value="0.00">
+                    </div>
+                </div>
+
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 8px;">
+                    <div style="display:flex; justify-content:space-between;">
+                        <span>ความคลาดเคลื่อน (Error):</span>
+                        <span id="error-val">0.00%</span>
+                    </div>
+                    <div class="meter-container">
+                        <div id="error-bar" class="meter-fill" style="width: 0%; background: #27ae60;"></div>
+                    </div>
+                    <div id="status-msg" class="status-text" style="color:#27ae60;">แม่นยำสูง (Safe)</div>
+                </div>
+
+                <div style="margin-top: 15px; font-size: 0.9rem; color: #bdc3c7;">
+                    *คำเตือน: สูตรนี้แม่นยำที่สุดเมื่อ \( \Delta \) มีค่าเข้าใกล้ 0 (ตามนิยามของแคลคูลัส) หาก \(\Delta\)
+                    มากกว่า 0.2 ความคลาดเคลื่อนจะเริ่มเห็นชัด
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        const rngDx = document.getElementById('rng-dx');
+        const valDx = document.getElementById('val-dx');
+        const errorBar = document.getElementById('error-bar');
+        const errorVal = document.getElementById('error-val');
+        const statusMsg = document.getElementById('status-msg');
+
+        rngDx.addEventListener('input', (e) => {
+            const dx = parseFloat(e.target.value);
+            valDx.textContent = dx.toFixed(2);
+
+            // Simulation Logic: Error grows quadratically
+            const errorPercent = (Math.pow(dx, 2) * 50);
+
+            errorVal.textContent = errorPercent.toFixed(2) + "%";
+            errorBar.style.width = Math.min(errorPercent * 2, 100) + "%";
+
+            if (dx <= 0.15) {
+                errorBar.style.background = "#27ae60";
+                statusMsg.textContent = "แม่นยำสูง (Safe Zone)";
+                statusMsg.style.color = "#27ae60";
+            } else if (dx <= 0.30) {
+                errorBar.style.background = "#f39c12";
+                statusMsg.textContent = "เริ่มมีความคลาดเคลื่อน (Caution)";
+                statusMsg.style.color = "#f39c12";
+            } else {
+                errorBar.style.background = "#c0392b";
+                statusMsg.textContent = "ไม่แนะนำให้ใช้ (High Error)";
+                statusMsg.style.color = "#c0392b";
+            }
+        });
+    </script>
+
+    <footer>
+        <p style="font-weight: 600; margin-bottom: 10px;">Phase 4: Shortcut Formulas & Exam Solutions</p>
+        <div class="footer-credit">
+            Developer: Mr.Satit Siriwach (COOLNUT)
+        </div>
+        <p style="margin-top: 15px; font-size: 0.85rem; color: #7f8c8d;">© 2026 Physics Coolnut Academy</p>
+    </footer>
+
+</body>
+
+</html>

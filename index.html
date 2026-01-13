@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jacobian Matrix Coordinate Transformation - Hub</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2C3E50;
+            --primary-light: #34495E;
+            --accent: #8B5CF6;
+            --accent-light: #A78BFA;
+            --gold: #F59E0B;
+            --gold-light: #FBBF24;
+            --bg-main: #FAFAFA;
+            --bg-card: #FFFFFF;
+            --text-dark: #1F2937;
+            --text-medium: #4B5563;
+            --text-light: #6B7280;
+            --border: #E5E7EB;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Elegant Background Pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+                linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.8) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 60px 20px;
+            position: relative;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+            font-weight: 500;
+            margin-top: 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 25px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Phase Cards Grid */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .phase-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+        }
+
+        .phase-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .phase-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .phase-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-light);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .phase-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .phase-card:nth-child(1) .phase-badge {
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+        }
+
+        .phase-card:nth-child(2) .phase-badge {
+            background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);
+        }
+
+        .phase-card:nth-child(3) .phase-badge {
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        .phase-card:nth-child(4) .phase-badge {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+
+        .phase-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .phase-description {
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phase-highlights {
+            list-style: none;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phase-highlights li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .phase-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .explore-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .explore-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--gold) 100%);
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .explore-btn:hover::before {
+            left: 0;
+        }
+
+        .explore-btn:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-light);
+            border-top: 2px solid var(--border);
+            margin-top: 60px;
+            background: white;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .footer-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .footer-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            margin-bottom: 20px;
+        }
+
+        .developer-credit {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--gold-light) 100%);
+            color: white;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            header {
+                margin-bottom: 60px;
+                padding: 40px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .tagline {
+                font-size: 1rem;
+            }
+
+            .phases-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .phase-card {
+                padding: 25px;
+            }
+
+            .phase-title {
+                font-size: 1.5rem;
+            }
+
+            header {
+                margin-bottom: 40px;
+                padding: 30px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+
+            .phase-card {
+                padding: 20px;
+            }
+
+            .explore-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Scroll Animation */
+        .phase-card {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .phase-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .phase-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .phase-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .phase-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">JACOBIAN MATRIX</h1>
+            <p class="subtitle">Coordinate Transformation Project By Coolnut</p>
+            <p class="tagline">
+                การแปลงพิกัดฉากเป็นพิกัดทรงกลมโดยไม่ใช้ฟังก์ชันตรีโกณมิติผกผัน<br>
+                ด้วยพลังของเมทริกซ์จาโคเบียนและพีชคณิตเชิงเส้น
+            </p>
+        </header>
+
+        <div class="phases-grid">
+            <!-- Phase 1 -->
+            <div class="phase-card" onclick="window.location.href='phase1.html'">
+                <span class="phase-badge">Phase 1</span>
+                <h2 class="phase-title">การสร้างสมการเมทริกซ์แม่แบบ</h2>
+                <p class="phase-description">
+                    เริ่มต้นด้วยการสร้างสมการคณิตศาสตร์พื้นฐานสำหรับการแปลงพิกัด โดยใช้หลักการของ Linearization และ
+                    Jacobian Matrix
+                </p>
+                <ul class="phase-highlights">
+                    <li>ทำความเข้าใจ Forward Kinematics</li>
+                    <li>อนุกรมเทย์เลอร์หลายตัวแปร</li>
+                    <li>การคำนวณ Inverse Jacobian Matrix</li>
+                    <li>ห้องทดลองจำลองแบบ Interactive</li>
+                </ul>
+                <a href="phase1.html" class="explore-btn">
+                    <span>สำรวจเนื้อหา</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="phase-card" onclick="window.location.href='phase2.html'">
+                <span class="phase-badge">Phase 2</span>
+                <h2 class="phase-title">การออกแบบตรรกะและคณิตศาสตร์</h2>
+                <p class="phase-description">
+                    ทำความเห็นภาพการแบ่งโซน 8 ส่วน (Octants) และเรียนรู้ที่มาของตัวเลขในเมทริกซ์ผ่านการคำนวณจริง
+                </p>
+                <ul class="phase-highlights">
+                    <li>แนวคิดการแบ่งโซน (Zoning Logic)</li>
+                    <li>ที่มาของค่าสัมประสิทธิ์ในเมทริกซ์</li>
+                    <li>ตัวอย่างการคำนวณแบบ Step-by-Step</li>
+                    <li>ห้องทดลองอัลกอริทึม</li>
+                </ul>
+                <a href="phase2.html" class="explore-btn">
+                    <span>สำรวจเนื้อหา</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="phase-card" onclick="window.location.href='phase3.html'">
+                <span class="phase-badge">Phase 3</span>
+                <h2 class="phase-title">การวัดผลและบทสรุป</h2>
+                <p class="phase-description">
+                    เปรียบเทียบประสิทธิภาพระหว่างวิธีเดิมกับวิธีใหม่
+                    พร้อมวิเคราะห์ความคลาดเคลื่อนและการประยุกต์ใช้งานจริง
+                </p>
+                <ul class="phase-highlights">
+                    <li>การวิเคราะห์ต้นทุนการคำนวณ (FLOPs)</li>
+                    <li>Speed Benchmark: เร็วกว่า 7.8 เท่า</li>
+                    <li>Error Analysis และข้อจำกัด</li>
+                    <li>การนำไปประยุกต์ใช้งานจริง</li>
+                </ul>
+                <a href="phase3.html" class="explore-btn">
+                    <span>สำรวจเนื้อหา</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="phase-card" onclick="window.location.href='phase4.html'">
+                <span class="phase-badge">Phase 4</span>
+                <h2 class="phase-title">คู่มือสูตรลัดและการสอบ</h2>
+                <p class="phase-description">
+                    สูตรสำเร็จรูปพร้อมใช้ตอบโจทย์การสอบและการแข่งขัน พร้อมตัวอย่างการแก้โจทย์แบบตัวเลขและตัวแปร
+                </p>
+                <ul class="phase-highlights">
+                    <li>สูตรลัด 3 บรรทัดจำง่าย</li>
+                    <li>ตัวอย่างโจทย์แบบตัวเลข (Numeric)</li>
+                    <li>ตัวอย่างโจทย์แบบตัวแปร (Variable)</li>
+                    <li>การจำลองความคลาดเคลื่อน</li>
+                </ul>
+                <a href="phase4.html" class="explore-btn">
+                    <span>สำรวจเนื้อหา</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p class="footer-title">🚀 Inverse-Free Coordinate Transformation Project</p>
+            <p class="footer-subtitle">
+                พัฒนาด้วยความตั้งใจเพื่อการเรียนรู้ที่มีประสิทธิภาพ
+            </p>
+            <div class="developer-credit">
+                Developer: Mr.Satit Siriwach (COOLNUT)
+            </div>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-light);">
+                © 2026 Physics Coolnut Academy
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>

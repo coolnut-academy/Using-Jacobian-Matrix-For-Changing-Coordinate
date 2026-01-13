@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,10 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <!-- โหลด Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
             --primary-color: #2c3e50;
@@ -44,7 +47,30 @@
             background: linear-gradient(135deg, #2c3e50, #3498db);
             color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -78,7 +104,7 @@
             padding: 30px;
             margin-bottom: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             border-left: 5px solid var(--accent-color);
         }
 
@@ -142,7 +168,11 @@
             background: white;
             padding: 15px;
             border-radius: 8px;
+<<<<<<< HEAD
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+=======
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+>>>>>>> ef8acfa (upload fullversion 1.0)
         }
 
         .control-group {
@@ -173,7 +203,11 @@
             padding-bottom: 5px;
             border-bottom: 1px dashed #eee;
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> ef8acfa (upload fullversion 1.0)
         .result-row.header {
             font-weight: bold;
             border-bottom: 2px solid #ddd;
@@ -218,24 +252,44 @@
             border-radius: 8px;
             text-align: left;
             font-family: 'Roboto Mono', monospace;
+<<<<<<< HEAD
             box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             margin-top: 15px;
             font-size: 0.95rem;
         }
+=======
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+>>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-line {
             border-bottom: 1px dashed #eee;
             padding: 8px 0;
             display: flex;
             align-items: center;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-label {
             width: 60px;
             font-weight: bold;
             color: var(--accent-color);
         }
+<<<<<<< HEAD
         .calc-math {
             flex-grow: 1;
         }
+=======
+
+        .calc-math {
+            flex-grow: 1;
+        }
+
+>>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-result {
             font-weight: bold;
             color: var(--success-color);
@@ -244,142 +298,210 @@
         footer {
             text-align: center;
             margin-top: 40px;
-            color: #7f8c8d;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            color: #2c3e50;
+        }
+
+        .footer-credit {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            border-radius: 25px;
+            font-weight: 600;
+            margin-top: 15px;
             font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                max-width: 100%;
+                padding: 20px 15px;
+            }
+
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 15px 10px;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            .simulation-container {
+                flex-direction: column;
+            }
+
+            .controls,
+            .results {
+                min-width: 100%;
+            }
+
+            .matrix-demo {
+                flex-direction: column;
+            }
+
+            .matrix-card {
+                min-width: 100%;
+            }
+
+            .home-btn {
+                position: static;
+                display: block;
+                margin: 0 auto 15px;
+                width: fit-content;
+            }
+
+            .equation-box {
+                font-size: 0.85rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.2rem;
+            }
+
+            .phase-badge {
+                font-size: 0.75rem;
+                padding: 4px 12px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            input[type=range] {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<div class="container">
-    <header>
-        <span class="phase-badge">Phase 1</span>
-        <h1>การสร้างสมการเมทริกซ์แม่แบบ</h1>
-        <h2>Inverse-Free Coordinate Transformation Project</h2>
-    </header>
+    <div class="container">
+        <header>
+            <a href="index.html" class="home-btn">← หน้าหลัก</a>
+            <span class="phase-badge">Phase 1</span>
+            <h1>การสร้างสมการเมทริกซ์แม่แบบ</h1>
+            <h2>Inverse-Free Coordinate Transformation Project</h2>
+        </header>
 
-    <section id="objective">
-        <h3>1. วัตถุประสงค์ (Objective)</h3>
-        <p>
-            เพื่อสร้างสมการคณิตศาสตร์ที่สามารถแปลงพิกัดฉาก <span class="math-inline">\((x, y, z)\)</span> 
-            ไปเป็นพิกัดทรงกลม <span class="math-inline">\((r, \theta, \phi)\)</span> 
-            โดยอาศัยหลักการของ <strong>พีชคณิตเชิงเส้น (Linear Algebra)</strong> แทนการใช้ฟังก์ชันตรีโกณมิติผกผัน 
-            (<span class="math-inline">\(\arccos, \arctan\)</span>) ซึ่งมีต้นทุนการคำนวณสูง
-        </p>
-    </section>
+        <section id="objective">
+            <h3>1. วัตถุประสงค์ (Objective)</h3>
+            <p>
+                เพื่อสร้างสมการคณิตศาสตร์ที่สามารถแปลงพิกัดฉาก <span class="math-inline">\((x, y, z)\)</span>
+                ไปเป็นพิกัดทรงกลม <span class="math-inline">\((r, \theta, \phi)\)</span>
+                โดยอาศัยหลักการของ <strong>พีชคณิตเชิงเส้น (Linear Algebra)</strong> แทนการใช้ฟังก์ชันตรีโกณมิติผกผัน
+                (<span class="math-inline">\(\arccos, \arctan\)</span>) ซึ่งมีต้นทุนการคำนวณสูง
+            </p>
+        </section>
 
-    <section id="step1">
-        <h3>2. นิยามความสัมพันธ์ตั้งต้น (Forward Kinematics)</h3>
-        <p>
-            เริ่มต้นจากความสัมพันธ์พื้นฐานในการแปลงพิกัดทรงกลมเป็นพิกัดฉาก (ซึ่งเป็นสมการที่ไม่มี Inverse Trig):
-        </p>
-        <div class="equation-box">
-            $$ 
-            \begin{align}
-            x &= r \sin\theta \cos\phi \\
-            y &= r \sin\theta \sin\phi \\
-            z &= r \cos\theta
-            \end{align}
-            $$
-        </div>
-        <p>
-            โดยที่:
+        <section id="step1">
+            <h3>2. นิยามความสัมพันธ์ตั้งต้น (Forward Kinematics)</h3>
+            <p>
+                เริ่มต้นจากความสัมพันธ์พื้นฐานในการแปลงพิกัดทรงกลมเป็นพิกัดฉาก (ซึ่งเป็นสมการที่ไม่มี Inverse Trig):
+            </p>
+            <div class="equation-box">
+                $$
+                \begin{align}
+                x &= r \sin\theta \cos\phi \\
+                y &= r \sin\theta \sin\phi \\
+                z &= r \cos\theta
+                \end{align}
+                $$
+            </div>
+            <p>
+                โดยที่:
             <ul>
                 <li><span class="math-inline">\(r\)</span> : รัศมี (Radius)</li>
-                <li><span class="math-inline">\(\theta\)</span> : มุมขั้ว (Polar angle), <span class="math-inline">\(0 \le \theta \le \pi\)</span></li>
-                <li><span class="math-inline">\(\phi\)</span> : มุมทิศ (Azimuth angle), <span class="math-inline">\(0 \le \phi \le 2\pi\)</span></li>
+                <li><span class="math-inline">\(\theta\)</span> : มุมขั้ว (Polar angle), <span class="math-inline">\(0
+                        \le \theta \le \pi\)</span></li>
+                <li><span class="math-inline">\(\phi\)</span> : มุมทิศ (Azimuth angle), <span class="math-inline">\(0
+                        \le \phi \le 2\pi\)</span></li>
             </ul>
-        </p>
-    </section>
+            </p>
+        </section>
 
-    <section id="step2">
-        <h3>3. การทำให้เป็นเส้นตรง (Linearization)</h3>
-        <p>
-            เราประยุกต์ใช้ <strong>อนุกรมเทย์เลอร์หลายตัวแปร (Multivariate Taylor Series)</strong> 
-            เพื่อประมาณค่าพิกัดรอบจุดอ้างอิง <span class="math-inline">\(\mathbf{u}_0 = (r_0, \theta_0, \phi_0)\)</span> 
-            โดยตัดพจน์อันดับสูงทิ้ง เหลือเพียงความสัมพันธ์เชิงเส้น:
-        </p>
-        <div class="equation-box">
-            $$ \Delta \mathbf{x} \approx \mathbf{J} \cdot \Delta \mathbf{u} $$
-        </div>
-        <p>
-            โดยที่ <span class="math-inline">\(\mathbf{J}\)</span> คือ <strong>Jacobian Matrix</strong> 
-            (เมทริกซ์ของอนุพันธ์ย่อย) ที่อธิบายอัตราการเปลี่ยนแปลงของพื้นที่:
-        </p>
-        <div class="equation-box">
-            $$ \mathbf{J} = \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} = 
-            \begin{bmatrix}
-            \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi} \\
-            \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi} \\
-            \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}
-            \end{bmatrix} $$
-        </div>
-    </section>
-
-    <section id="step3">
-        <h3>4. การหาเมทริกซ์จาโคเบียน (Computing Jacobian)</h3>
-        <p>
-            จากการหาอนุพันธ์ย่อย (Partial Derivatives) ของสมการตั้งต้น จะได้สมาชิกของเมทริกซ์ดังนี้:
-        </p>
-        <div class="equation-box">
-            $$ \mathbf{J} = 
-            \begin{bmatrix}
-            \sin\theta \cos\phi & r \cos\theta \cos\phi & -r \sin\theta \sin\phi \\
-            \sin\theta \sin\phi & r \cos\theta \sin\phi & r \sin\theta \cos\phi \\
-            \cos\theta & -r \sin\theta & 0
-            \end{bmatrix} $$
-        </div>
-        <div class="note">
-            <strong>💡 ความสำคัญ:</strong> เมทริกซ์นี้อธิบายการเปลี่ยนแปลงแบบ <em>"ไปข้างหน้า"</em> (จากมุมเป็นพิกัดฉาก) 
-            แต่เป้าหมายของเราคือการแปลง <em>"ย้อนกลับ"</em>
-        </div>
-    </section>
-
-    <section id="step4">
-        <h3>5. สมการผกผันเพื่อการใช้งานจริง (The Inverse Solution)</h3>
-        <p>
-            เพื่อให้ได้ค่า <span class="math-inline">\((dr, d\theta, d\phi)\)</span> จากค่า <span class="math-inline">\((dx, dy, dz)\)</span> 
-            เราจำเป็นต้องคูณด้วย <strong>Inverse Jacobian Matrix (<span class="math-inline">\(\mathbf{J}^{-1}\)</span>)</strong>:
-        </p>
-        <div class="equation-box">
-            $$ 
-            \begin{bmatrix} dr \\ d\theta \\ d\phi \end{bmatrix} \approx \mathbf{J}^{-1} \cdot \begin{bmatrix} dx \\ dy \\ dz \end{bmatrix}
-            $$
-        </div>
-        <p>
-            นี่คือ <strong>"สมการพระเอก"</strong> ของโครงงานนี้ ซึ่งเราจะทำการคำนวณค่า <span class="math-inline">\(\mathbf{J}^{-1}\)</span> 
-            ล่วงหน้า (Pre-compute) สำหรับแต่ละโซนของพื้นที่ เพื่อให้คอมพิวเตอร์สามารถเรียกใช้ได้ทันทีโดยไม่ต้องคำนวณใหม่
-        </p>
-    </section>
-
-    <section id="example">
-        <h3>6. ตัวอย่างการใช้งานจริง (Proof of Concept: Zone 1)</h3>
-        <p>
-            พิจารณาจุดกึ่งกลางของโซนที่ 1 (Octant 1) ณ พิกัดมุม:
-            <br>
-            <span class="highlight">\(r=1, \theta=45^\circ (\pi/4), \phi=45^\circ (\pi/4)\)</span>
-        </p>
-        
-        <div class="matrix-demo">
-            <div class="matrix-card">
-                <h4>Forward Matrix (\(\mathbf{J}\))</h4>
-                <p>แทนค่า \(\sin, \cos\) ลงไปจะได้:</p>
-                $$ \begin{bmatrix}
-                0.5 & 0.5 & -0.5 \\
-                0.5 & 0.5 & 0.5 \\
-                0.707 & -0.707 & 0
+        <section id="step2">
+            <h3>3. การทำให้เป็นเส้นตรง (Linearization)</h3>
+            <p>
+                เราประยุกต์ใช้ <strong>อนุกรมเทย์เลอร์หลายตัวแปร (Multivariate Taylor Series)</strong>
+                เพื่อประมาณค่าพิกัดรอบจุดอ้างอิง <span class="math-inline">\(\mathbf{u}_0 = (r_0, \theta_0,
+                    \phi_0)\)</span>
+                โดยตัดพจน์อันดับสูงทิ้ง เหลือเพียงความสัมพันธ์เชิงเส้น:
+            </p>
+            <div class="equation-box">
+                $$ \Delta \mathbf{x} \approx \mathbf{J} \cdot \Delta \mathbf{u} $$
+            </div>
+            <p>
+                โดยที่ <span class="math-inline">\(\mathbf{J}\)</span> คือ <strong>Jacobian Matrix</strong>
+                (เมทริกซ์ของอนุพันธ์ย่อย) ที่อธิบายอัตราการเปลี่ยนแปลงของพื้นที่:
+            </p>
+            <div class="equation-box">
+                $$ \mathbf{J} = \frac{\partial(x,y,z)}{\partial(r,\theta,\phi)} =
+                \begin{bmatrix}
+                \frac{\partial x}{\partial r} & \frac{\partial x}{\partial \theta} & \frac{\partial x}{\partial \phi} \\
+                \frac{\partial y}{\partial r} & \frac{\partial y}{\partial \theta} & \frac{\partial y}{\partial \phi} \\
+                \frac{\partial z}{\partial r} & \frac{\partial z}{\partial \theta} & \frac{\partial z}{\partial \phi}
                 \end{bmatrix} $$
             </div>
+        </section>
 
-            <div class="matrix-card">
-                <h4>Inverse Matrix (\(\mathbf{J}^{-1}\))</h4>
-                <p class="highlight">นี่คือค่าคงที่ที่เราจะใช้ในโค้ด:</p>
-                $$ \begin{bmatrix}
-                0.5 & 0.5 & 0.707 \\
-                0.5 & 0.5 & -0.707 \\
-                -1 & 1 & 0
+        <section id="step3">
+            <h3>4. การหาเมทริกซ์จาโคเบียน (Computing Jacobian)</h3>
+            <p>
+                จากการหาอนุพันธ์ย่อย (Partial Derivatives) ของสมการตั้งต้น จะได้สมาชิกของเมทริกซ์ดังนี้:
+            </p>
+            <div class="equation-box">
+                $$ \mathbf{J} =
+                \begin{bmatrix}
+                \sin\theta \cos\phi & r \cos\theta \cos\phi & -r \sin\theta \sin\phi \\
+                \sin\theta \sin\phi & r \cos\theta \sin\phi & r \sin\theta \cos\phi \\
+                \cos\theta & -r \sin\theta & 0
                 \end{bmatrix} $$
             </div>
+<<<<<<< HEAD
         </div>
 
         <!-- Shortcut Formula Section (Example Walkthrough) -->
@@ -497,11 +619,302 @@
             </div>
         </div>
     </section>
+=======
+            <div class="note">
+                <strong>💡 ความสำคัญ:</strong> เมทริกซ์นี้อธิบายการเปลี่ยนแปลงแบบ <em>"ไปข้างหน้า"</em>
+                (จากมุมเป็นพิกัดฉาก)
+                แต่เป้าหมายของเราคือการแปลง <em>"ย้อนกลับ"</em>
+            </div>
+        </section>
+>>>>>>> ef8acfa (upload fullversion 1.0)
 
-    <footer>
-        <p>Project: Inverse-Free Coordinate Transformation | Phase 1 Documentation</p>
-    </footer>
-</div>
+        <section id="step4">
+            <h3>5. สมการผกผันเพื่อการใช้งานจริง (The Inverse Solution)</h3>
+            <p>
+                เพื่อให้ได้ค่า <span class="math-inline">\((dr, d\theta, d\phi)\)</span> จากค่า <span
+                    class="math-inline">\((dx, dy, dz)\)</span>
+                เราจำเป็นต้องคูณด้วย <strong>Inverse Jacobian Matrix (<span
+                        class="math-inline">\(\mathbf{J}^{-1}\)</span>)</strong>:
+            </p>
+            <div class="equation-box">
+                $$
+                \begin{bmatrix} dr \\ d\theta \\ d\phi \end{bmatrix} \approx \mathbf{J}^{-1} \cdot \begin{bmatrix} dx \\
+                dy \\ dz \end{bmatrix}
+                $$
+            </div>
+            <p>
+                นี่คือ <strong>"สมการพระเอก"</strong> ของโครงงานนี้ ซึ่งเราจะทำการคำนวณค่า <span
+                    class="math-inline">\(\mathbf{J}^{-1}\)</span>
+                ล่วงหน้า (Pre-compute) สำหรับแต่ละโซนของพื้นที่
+                เพื่อให้คอมพิวเตอร์สามารถเรียกใช้ได้ทันทีโดยไม่ต้องคำนวณใหม่
+            </p>
+        </section>
+
+        <section id="example">
+            <h3>6. ตัวอย่างการใช้งานจริง (Proof of Concept: Zone 1)</h3>
+            <p>
+                พิจารณาจุดกึ่งกลางของโซนที่ 1 (Octant 1) ณ พิกัดมุม:
+                <br>
+                <span class="highlight">\(r=1, \theta=45^\circ (\pi/4), \phi=45^\circ (\pi/4)\)</span>
+            </p>
+
+            <div class="matrix-demo">
+                <div class="matrix-card">
+                    <h4>Forward Matrix (\(\mathbf{J}\))</h4>
+                    <p>แทนค่า \(\sin, \cos\) ลงไปจะได้:</p>
+                    $$ \begin{bmatrix}
+                    0.5 & 0.5 & -0.5 \\
+                    0.5 & 0.5 & 0.5 \\
+                    0.707 & -0.707 & 0
+                    \end{bmatrix} $$
+                </div>
+
+                <div class="matrix-card">
+                    <h4>Inverse Matrix (\(\mathbf{J}^{-1}\))</h4>
+                    <p class="highlight">นี่คือค่าคงที่ที่เราจะใช้ในโค้ด:</p>
+                    $$ \begin{bmatrix}
+                    0.5 & 0.5 & 0.707 \\
+                    0.5 & 0.5 & -0.707 \\
+                    -1 & 1 & 0
+                    \end{bmatrix} $$
+                </div>
+            </div>
+
+            <!-- Shortcut Formula Section (Example Walkthrough) -->
+            <div class="equation-box" style="background-color: #d4edda; border: 1px solid #c3e6cb; margin-top: 25px;">
+                <h4 style="margin-top: 0; color: #155724;">✅ ตัวอย่างการคำนวณจริง (Walkthrough)</h4>
+                <p>สมมติเราต้องการหาค่าพิกัดใหม่เมื่อขยับจากจุดเดิมไปเล็กน้อย โดยที่ <span class="math-inline">\(\Delta
+                        x = 0.02, \Delta y = 0.02, \Delta z = 0.01\)</span></p>
+
+                <div class="calc-step">
+                    <div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                        <strong>Step 1: ตั้งสมการเมทริกซ์ (จาก Zone 1)</strong>
+                    </div>
+                    $$
+                    \begin{bmatrix} dr \\ d\theta \\ d\phi \end{bmatrix} =
+                    \begin{bmatrix} 0.5 & 0.5 & 0.707 \\ 0.5 & 0.5 & -0.707 \\ -1 & 1 & 0 \end{bmatrix}
+                    \times \begin{bmatrix} 0.02 \\ 0.02 \\ 0.01 \end{bmatrix}
+                    $$
+
+                    <div
+                        style="margin-top: 15px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
+                        <strong>Step 2: คูณตัวเลขในใจ (Mental Math)</strong>
+                    </div>
+
+                    <div class="calc-line">
+                        <span class="calc-label">Δr</span>
+                        <span class="calc-math">= (0.5)(0.02) + (0.5)(0.02) + (0.707)(0.01)</span>
+                        <span class="calc-result">= 0.02707</span>
+                    </div>
+                    <div class="calc-line">
+                        <span class="calc-label">Δθ</span>
+                        <span class="calc-math">= (0.5)(0.02) + (0.5)(0.02) - (0.707)(0.01)</span>
+                        <span class="calc-result">= 0.01293</span>
+                    </div>
+                    <div class="calc-line" style="border-bottom: none;">
+                        <span class="calc-label">Δφ</span>
+                        <span class="calc-math">= (-1)(0.02) + (1)(0.02) + (0)(0.01)</span>
+                        <span class="calc-result">= 0.00000</span>
+                    </div>
+                </div>
+
+                <p style="font-size: 0.9rem; color: #155724; margin-top: 10px;">
+                    *สังเกต: เราได้คำตอบทันทีโดยไม่ต้องกดเครื่องคิดเลขหาค่า sin/cos/arccos แม้แต่ครั้งเดียว!
+                </p>
+            </div>
+        </section>
+
+        <section id="simulation">
+            <h3>7. ห้องทดลองจำลอง (Interactive Simulation)</h3>
+            <p>
+                ทดลองปรับค่าการเคลื่อนที่เล็กน้อย <span class="math-inline">\((\Delta x, \Delta y, \Delta z)\)</span>
+                เพื่อเปรียบเทียบความแม่นยำระหว่างวิธี Matrix (Linear) และวิธี Exact (Trigonometry)
+                ณ จุด Zone 1 Center <span class="math-inline">\((1, 45^\circ, 45^\circ)\)</span>
+            </p>
+
+            <div class="simulation-container">
+                <div class="controls">
+                    <h4>🎛️ Input Controls</h4>
+                    <div class="control-group">
+                        <label>Δx (ขยับแกน X): <span id="val-dx" class="value-display">0.00</span></label>
+                        <input type="range" id="input-dx" min="-0.2" max="0.2" step="0.01" value="0.00">
+                    </div>
+                    <div class="control-group">
+                        <label>Δy (ขยับแกน Y): <span id="val-dy" class="value-display">0.00</span></label>
+                        <input type="range" id="input-dy" min="-0.2" max="0.2" step="0.01" value="0.00">
+                    </div>
+                    <div class="control-group">
+                        <label>Δz (ขยับแกน Z): <span id="val-dz" class="value-display">0.00</span></label>
+                        <input type="range" id="input-dz" min="-0.2" max="0.2" step="0.01" value="0.00">
+                    </div>
+                    <div class="note" style="margin-top: 10px; font-size: 0.8rem;">
+                        *สังเกต: ถ้ายิ่งขยับค่า Δ มาก (ห่างจากจุดศูนย์กลางโซน) ค่า Error จะเริ่มสูงขึ้นตามธรรมชาติของ
+                        Linearization
+                    </div>
+                </div>
+
+                <div class="results">
+                    <h4>📊 Real-time Comparison</h4>
+
+                    <div class="result-row header">
+                        <span>Value</span>
+                        <span>Matrix (Fast)</span>
+                        <span>Exact (Slow)</span>
+                    </div>
+
+                    <!-- Delta R -->
+                    <div class="result-row">
+                        <span>Δr</span>
+                        <span id="res-matrix-dr">0.000</span>
+                        <span id="res-exact-dr">0.000</span>
+                    </div>
+                    <div class="error-bar-container">
+                        <div id="bar-dr" class="error-bar"></div>
+                    </div>
+
+                    <!-- Delta Theta -->
+                    <div class="result-row">
+                        <span>Δθ (rad)</span>
+                        <span id="res-matrix-dtheta">0.000</span>
+                        <span id="res-exact-dtheta">0.000</span>
+                    </div>
+                    <div class="error-bar-container">
+                        <div id="bar-dtheta" class="error-bar"></div>
+                    </div>
+
+                    <!-- Delta Phi -->
+                    <div class="result-row">
+                        <span>Δφ (rad)</span>
+                        <span id="res-matrix-dphi">0.000</span>
+                        <span id="res-exact-dphi">0.000</span>
+                    </div>
+                    <div class="error-bar-container">
+                        <div id="bar-dphi" class="error-bar"></div>
+                    </div>
+
+                    <div style="margin-top: 15px; font-weight: bold; text-align: right;">
+                        Error Status: <span id="status-text" style="color: var(--success-color)">Excellent</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p style="font-weight: 600; margin-bottom: 10px;">Project: Inverse-Free Coordinate Transformation | Phase 1
+                Documentation</p>
+            <div class="footer-credit">
+                Developer: Mr.Satit Siriwach (COOLNUT)
+            </div>
+            <p style="margin-top: 15px; font-size: 0.85rem; color: #7f8c8d;">© 2026 Physics Coolnut Academy</p>
+        </footer>
+    </div>
+
+    <script>
+        // Constants for Zone 1 Center (r=1, theta=45deg, phi=45deg)
+        // Converted to Cartesian: x=0.5, y=0.5, z=0.707
+        const r0 = 1;
+        const theta0 = Math.PI / 4;
+        const phi0 = Math.PI / 4;
+
+        // Initial Cartesian
+        const x0 = 0.5;
+        const y0 = 0.5;
+        const z0 = 0.7071; // 1 * cos(45)
+
+        // Pre-computed Inverse Jacobian Matrix for Zone 1
+        // [ 0.5   0.5   0.707 ]
+        // [ 0.5   0.5  -0.707 ]
+        // [ -1     1      0   ]
+        const J_inv = [
+            [0.5, 0.5, 0.7071],
+            [0.5, 0.5, -0.7071],
+            [-1, 1, 0]
+        ];
+
+        function updateSimulation() {
+            // Get Inputs
+            const dx = parseFloat(document.getElementById('input-dx').value);
+            const dy = parseFloat(document.getElementById('input-dy').value);
+            const dz = parseFloat(document.getElementById('input-dz').value);
+
+            // Update Display Values
+            document.getElementById('val-dx').textContent = (dx > 0 ? '+' : '') + dx.toFixed(2);
+            document.getElementById('val-dy').textContent = (dy > 0 ? '+' : '') + dy.toFixed(2);
+            document.getElementById('val-dz').textContent = (dz > 0 ? '+' : '') + dz.toFixed(2);
+
+            // 1. Matrix Calculation (Linear Approximation)
+            // [dr] = [row1] * [dx, dy, dz]
+            const m_dr = (J_inv[0][0] * dx) + (J_inv[0][1] * dy) + (J_inv[0][2] * dz);
+            const m_dtheta = (J_inv[1][0] * dx) + (J_inv[1][1] * dy) + (J_inv[1][2] * dz);
+            const m_dphi = (J_inv[2][0] * dx) + (J_inv[2][1] * dy) + (J_inv[2][2] * dz);
+
+            // 2. Exact Calculation (Trigonometry)
+            const x_new = x0 + dx;
+            const y_new = y0 + dy;
+            const z_new = z0 + dz;
+
+            const r_new = Math.sqrt(x_new * x_new + y_new * y_new + z_new * z_new);
+            const theta_new = Math.acos(z_new / r_new); // 0 to PI
+            const phi_new = Math.atan2(y_new, x_new);   // -PI to PI
+
+            const e_dr = r_new - r0;
+            const e_dtheta = theta_new - theta0;
+            const e_dphi = phi_new - phi0;
+
+            // Display Results
+            document.getElementById('res-matrix-dr').textContent = m_dr.toFixed(4);
+            document.getElementById('res-exact-dr').textContent = e_dr.toFixed(4);
+
+            document.getElementById('res-matrix-dtheta').textContent = m_dtheta.toFixed(4);
+            document.getElementById('res-exact-dtheta').textContent = e_dtheta.toFixed(4);
+
+            document.getElementById('res-matrix-dphi').textContent = m_dphi.toFixed(4);
+            document.getElementById('res-exact-dphi').textContent = e_dphi.toFixed(4);
+
+            // Calculate Errors for Visualization
+            updateErrorBar('bar-dr', m_dr, e_dr);
+            updateErrorBar('bar-dtheta', m_dtheta, e_dtheta);
+            updateErrorBar('bar-dphi', m_dphi, e_dphi);
+
+            // Global Status
+            const maxDiff = Math.max(
+                Math.abs(m_dr - e_dr),
+                Math.abs(m_dtheta - e_dtheta),
+                Math.abs(m_dphi - e_dphi)
+            );
+
+            const statusElem = document.getElementById('status-text');
+            if (maxDiff < 0.05) {
+                statusElem.textContent = "Excellent (Accurate)";
+                statusElem.style.color = "#27ae60";
+            } else if (maxDiff < 0.15) {
+                statusElem.textContent = "Good (Acceptable)";
+                statusElem.style.color = "#e67e22";
+            } else {
+                statusElem.textContent = "Warning (High Error)";
+                statusElem.style.color = "#c0392b";
+            }
+        }
+
+        function updateErrorBar(elementId, matrixVal, exactVal) {
+            const bar = document.getElementById(elementId);
+            const diff = Math.abs(matrixVal - exactVal);
+            // Normalize error visually (arbitrary scale for demo)
+            // If diff is 0, width 0. If diff is 0.1, width 100%
+            let percent = Math.min(diff * 1000, 100);
+
+            bar.style.width = percent + "%";
+
+            if (percent < 20) bar.style.backgroundColor = "#27ae60"; // Green
+            else if (percent < 60) bar.style.backgroundColor = "#e67e22"; // Orange
+            else bar.style.backgroundColor = "#c0392b"; // Red
+        }
+
+        // Initialize
+        document.getElementById('input-dx').addEventListener('input', updateSimulation);
+        document.getElementById('input-dy').addEventListener('input', updateSimulation);
+        document.getElementById('input-dz').addEventListener('input', updateSimulation);
+    </script>
 
 <script>
     // Constants for Zone 1 Center (r=1, theta=45deg, phi=45deg)
@@ -611,4 +1024,5 @@
 </script>
 
 </body>
+
 </html>
