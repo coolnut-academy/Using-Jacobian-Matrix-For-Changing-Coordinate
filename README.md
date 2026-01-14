@@ -59,9 +59,9 @@
 
 เนื่องจากเป็นโปรเจกต์รูปแบบ Static Web คุณสามารถเปิดใช้งานได้ทันทีโดยไม่ต้องติดตั้ง Server
 
-1.  Clone หรือ Download โปรเจกต์นี้
+1.  Clone โปรเจกต์นี้
     ```bash
-    git clone [https://github.com/your-username/jacobian-coordinate-transform.git](https://github.com/your-username/jacobian-coordinate-transform.git)
+    git clone [https://github.com/coolnut-academy/Using-Jacobian-Matrix-For-Changing-Coordinate.git](https://github.com/coolnut-academy/Using-Jacobian-Matrix-For-Changing-Coordinate.git)
     ```
 2.  เปิดไฟล์ `index.html` ด้วย Web Browser ของคุณ (แนะนำ Chrome หรือ Edge)
 3.  เลือกเข้าชมเนื้อหาแต่ละ Phase ได้จากหน้าเมนูหลัก
