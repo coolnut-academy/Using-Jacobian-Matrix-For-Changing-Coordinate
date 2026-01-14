@@ -61,7 +61,7 @@
 
 1.  Clone โปรเจกต์นี้
     ```bash
-    git clone [https://github.com/coolnut-academy/Using-Jacobian-Matrix-For-Changing-Coordinate.git](https://github.com/coolnut-academy/Using-Jacobian-Matrix-For-Changing-Coordinate.git)
+    git clone https://github.com/coolnut-academy/Using-Jacobian-Matrix-For-Changing-Coordinate
     ```
 2.  เปิดไฟล์ `index.html` ด้วย Web Browser ของคุณ (แนะนำ Chrome หรือ Edge)
 3.  เลือกเข้าชมเนื้อหาแต่ละ Phase ได้จากหน้าเมนูหลัก
