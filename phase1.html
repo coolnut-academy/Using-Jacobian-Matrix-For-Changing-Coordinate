@@ -168,11 +168,7 @@
             background: white;
             padding: 15px;
             border-radius: 8px;
-<<<<<<< HEAD
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-=======
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
->>>>>>> ef8acfa (upload fullversion 1.0)
         }
 
         .control-group {
@@ -203,11 +199,7 @@
             padding-bottom: 5px;
             border-bottom: 1px dashed #eee;
         }
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> ef8acfa (upload fullversion 1.0)
         .result-row.header {
             font-weight: bold;
             border-bottom: 2px solid #ddd;
@@ -252,44 +244,28 @@
             border-radius: 8px;
             text-align: left;
             font-family: 'Roboto Mono', monospace;
-<<<<<<< HEAD
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-top: 15px;
-            font-size: 0.95rem;
-        }
-=======
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
             margin-top: 15px;
             font-size: 0.95rem;
         }
 
->>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-line {
             border-bottom: 1px dashed #eee;
             padding: 8px 0;
             display: flex;
             align-items: center;
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-label {
             width: 60px;
             font-weight: bold;
             color: var(--accent-color);
         }
-<<<<<<< HEAD
-        .calc-math {
-            flex-grow: 1;
-        }
-=======
 
         .calc-math {
             flex-grow: 1;
         }
 
->>>>>>> ef8acfa (upload fullversion 1.0)
         .calc-result {
             font-weight: bold;
             color: var(--success-color);
@@ -501,132 +477,12 @@
                 \cos\theta & -r \sin\theta & 0
                 \end{bmatrix} $$
             </div>
-<<<<<<< HEAD
-        </div>
-
-        <!-- Shortcut Formula Section (Example Walkthrough) -->
-        <div class="equation-box" style="background-color: #d4edda; border: 1px solid #c3e6cb; margin-top: 25px;">
-            <h4 style="margin-top: 0; color: #155724;">✅ ตัวอย่างการคำนวณจริง (Walkthrough)</h4>
-            <p>สมมติเราต้องการหาค่าพิกัดใหม่เมื่อขยับจากจุดเดิมไปเล็กน้อย โดยที่ <span class="math-inline">\(\Delta x = 0.02, \Delta y = 0.02, \Delta z = 0.01\)</span></p>
-            
-            <div class="calc-step">
-                <div style="margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-                    <strong>Step 1: ตั้งสมการเมทริกซ์ (จาก Zone 1)</strong>
-                </div>
-                $$ 
-                \begin{bmatrix} dr \\ d\theta \\ d\phi \end{bmatrix} = 
-                \begin{bmatrix} 0.5 & 0.5 & 0.707 \\ 0.5 & 0.5 & -0.707 \\ -1 & 1 & 0 \end{bmatrix} 
-                \times \begin{bmatrix} 0.02 \\ 0.02 \\ 0.01 \end{bmatrix} 
-                $$
-                
-                <div style="margin-top: 15px; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px;">
-                    <strong>Step 2: คูณตัวเลขในใจ (Mental Math)</strong>
-                </div>
-                
-                <div class="calc-line">
-                    <span class="calc-label">Δr</span>
-                    <span class="calc-math">= (0.5)(0.02) + (0.5)(0.02) + (0.707)(0.01)</span>
-                    <span class="calc-result">= 0.02707</span>
-                </div>
-                <div class="calc-line">
-                    <span class="calc-label">Δθ</span>
-                    <span class="calc-math">= (0.5)(0.02) + (0.5)(0.02) - (0.707)(0.01)</span>
-                    <span class="calc-result">= 0.01293</span>
-                </div>
-                <div class="calc-line" style="border-bottom: none;">
-                    <span class="calc-label">Δφ</span>
-                    <span class="calc-math">= (-1)(0.02) + (1)(0.02) + (0)(0.01)</span>
-                    <span class="calc-result">= 0.00000</span>
-                </div>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #155724; margin-top: 10px;">
-                *สังเกต: เราได้คำตอบทันทีโดยไม่ต้องกดเครื่องคิดเลขหาค่า sin/cos/arccos แม้แต่ครั้งเดียว!
-            </p>
-        </div>
-    </section>
-
-    <section id="simulation">
-        <h3>7. ห้องทดลองจำลอง (Interactive Simulation)</h3>
-        <p>
-            ทดลองปรับค่าการเคลื่อนที่เล็กน้อย <span class="math-inline">\((\Delta x, \Delta y, \Delta z)\)</span> 
-            เพื่อเปรียบเทียบความแม่นยำระหว่างวิธี Matrix (Linear) และวิธี Exact (Trigonometry)
-            ณ จุด Zone 1 Center <span class="math-inline">\((1, 45^\circ, 45^\circ)\)</span>
-        </p>
-
-        <div class="simulation-container">
-            <div class="controls">
-                <h4>🎛️ Input Controls</h4>
-                <div class="control-group">
-                    <label>Δx (ขยับแกน X): <span id="val-dx" class="value-display">0.00</span></label>
-                    <input type="range" id="input-dx" min="-0.2" max="0.2" step="0.01" value="0.00">
-                </div>
-                <div class="control-group">
-                    <label>Δy (ขยับแกน Y): <span id="val-dy" class="value-display">0.00</span></label>
-                    <input type="range" id="input-dy" min="-0.2" max="0.2" step="0.01" value="0.00">
-                </div>
-                <div class="control-group">
-                    <label>Δz (ขยับแกน Z): <span id="val-dz" class="value-display">0.00</span></label>
-                    <input type="range" id="input-dz" min="-0.2" max="0.2" step="0.01" value="0.00">
-                </div>
-                <div class="note" style="margin-top: 10px; font-size: 0.8rem;">
-                    *สังเกต: ถ้ายิ่งขยับค่า Δ มาก (ห่างจากจุดศูนย์กลางโซน) ค่า Error จะเริ่มสูงขึ้นตามธรรมชาติของ Linearization
-                </div>
-            </div>
-
-            <div class="results">
-                <h4>📊 Real-time Comparison</h4>
-                
-                <div class="result-row header">
-                    <span>Value</span>
-                    <span>Matrix (Fast)</span>
-                    <span>Exact (Slow)</span>
-                </div>
-                
-                <!-- Delta R -->
-                <div class="result-row">
-                    <span>Δr</span>
-                    <span id="res-matrix-dr">0.000</span>
-                    <span id="res-exact-dr">0.000</span>
-                </div>
-                <div class="error-bar-container">
-                    <div id="bar-dr" class="error-bar"></div>
-                </div>
-
-                <!-- Delta Theta -->
-                <div class="result-row">
-                    <span>Δθ (rad)</span>
-                    <span id="res-matrix-dtheta">0.000</span>
-                    <span id="res-exact-dtheta">0.000</span>
-                </div>
-                <div class="error-bar-container">
-                    <div id="bar-dtheta" class="error-bar"></div>
-                </div>
-
-                <!-- Delta Phi -->
-                <div class="result-row">
-                    <span>Δφ (rad)</span>
-                    <span id="res-matrix-dphi">0.000</span>
-                    <span id="res-exact-dphi">0.000</span>
-                </div>
-                <div class="error-bar-container">
-                    <div id="bar-dphi" class="error-bar"></div>
-                </div>
-
-                <div style="margin-top: 15px; font-weight: bold; text-align: right;">
-                    Error Status: <span id="status-text" style="color: var(--success-color)">Excellent</span>
-                </div>
-            </div>
-        </div>
-    </section>
-=======
             <div class="note">
                 <strong>💡 ความสำคัญ:</strong> เมทริกซ์นี้อธิบายการเปลี่ยนแปลงแบบ <em>"ไปข้างหน้า"</em>
                 (จากมุมเป็นพิกัดฉาก)
                 แต่เป้าหมายของเราคือการแปลง <em>"ย้อนกลับ"</em>
             </div>
         </section>
->>>>>>> ef8acfa (upload fullversion 1.0)
 
         <section id="step4">
             <h3>5. สมการผกผันเพื่อการใช้งานจริง (The Inverse Solution)</h3>
@@ -916,112 +772,7 @@
         document.getElementById('input-dz').addEventListener('input', updateSimulation);
     </script>
 
-<script>
-    // Constants for Zone 1 Center (r=1, theta=45deg, phi=45deg)
-    // Converted to Cartesian: x=0.5, y=0.5, z=0.707
-    const r0 = 1;
-    const theta0 = Math.PI / 4;
-    const phi0 = Math.PI / 4;
-    
-    // Initial Cartesian
-    const x0 = 0.5; 
-    const y0 = 0.5;
-    const z0 = 0.7071; // 1 * cos(45)
 
-    // Pre-computed Inverse Jacobian Matrix for Zone 1
-    // [ 0.5   0.5   0.707 ]
-    // [ 0.5   0.5  -0.707 ]
-    // [ -1     1      0   ]
-    const J_inv = [
-        [0.5, 0.5, 0.7071],
-        [0.5, 0.5, -0.7071],
-        [-1, 1, 0]
-    ];
-
-    function updateSimulation() {
-        // Get Inputs
-        const dx = parseFloat(document.getElementById('input-dx').value);
-        const dy = parseFloat(document.getElementById('input-dy').value);
-        const dz = parseFloat(document.getElementById('input-dz').value);
-
-        // Update Display Values
-        document.getElementById('val-dx').textContent = (dx > 0 ? '+' : '') + dx.toFixed(2);
-        document.getElementById('val-dy').textContent = (dy > 0 ? '+' : '') + dy.toFixed(2);
-        document.getElementById('val-dz').textContent = (dz > 0 ? '+' : '') + dz.toFixed(2);
-
-        // 1. Matrix Calculation (Linear Approximation)
-        // [dr] = [row1] * [dx, dy, dz]
-        const m_dr = (J_inv[0][0]*dx) + (J_inv[0][1]*dy) + (J_inv[0][2]*dz);
-        const m_dtheta = (J_inv[1][0]*dx) + (J_inv[1][1]*dy) + (J_inv[1][2]*dz);
-        const m_dphi = (J_inv[2][0]*dx) + (J_inv[2][1]*dy) + (J_inv[2][2]*dz);
-
-        // 2. Exact Calculation (Trigonometry)
-        const x_new = x0 + dx;
-        const y_new = y0 + dy;
-        const z_new = z0 + dz;
-
-        const r_new = Math.sqrt(x_new*x_new + y_new*y_new + z_new*z_new);
-        const theta_new = Math.acos(z_new / r_new); // 0 to PI
-        const phi_new = Math.atan2(y_new, x_new);   // -PI to PI
-
-        const e_dr = r_new - r0;
-        const e_dtheta = theta_new - theta0;
-        const e_dphi = phi_new - phi0;
-
-        // Display Results
-        document.getElementById('res-matrix-dr').textContent = m_dr.toFixed(4);
-        document.getElementById('res-exact-dr').textContent = e_dr.toFixed(4);
-
-        document.getElementById('res-matrix-dtheta').textContent = m_dtheta.toFixed(4);
-        document.getElementById('res-exact-dtheta').textContent = e_dtheta.toFixed(4);
-
-        document.getElementById('res-matrix-dphi').textContent = m_dphi.toFixed(4);
-        document.getElementById('res-exact-dphi').textContent = e_dphi.toFixed(4);
-
-        // Calculate Errors for Visualization
-        updateErrorBar('bar-dr', m_dr, e_dr);
-        updateErrorBar('bar-dtheta', m_dtheta, e_dtheta);
-        updateErrorBar('bar-dphi', m_dphi, e_dphi);
-
-        // Global Status
-        const maxDiff = Math.max(
-            Math.abs(m_dr - e_dr), 
-            Math.abs(m_dtheta - e_dtheta), 
-            Math.abs(m_dphi - e_dphi)
-        );
-        
-        const statusElem = document.getElementById('status-text');
-        if (maxDiff < 0.05) {
-            statusElem.textContent = "Excellent (Accurate)";
-            statusElem.style.color = "#27ae60";
-        } else if (maxDiff < 0.15) {
-            statusElem.textContent = "Good (Acceptable)";
-            statusElem.style.color = "#e67e22";
-        } else {
-            statusElem.textContent = "Warning (High Error)";
-            statusElem.style.color = "#c0392b";
-        }
-    }
-
-    function updateErrorBar(elementId, matrixVal, exactVal) {
-        const bar = document.getElementById(elementId);
-        const diff = Math.abs(matrixVal - exactVal);
-        // Normalize error visually (arbitrary scale for demo)
-        // If diff is 0, width 0. If diff is 0.1, width 100%
-        let percent = Math.min(diff * 1000, 100); 
-        
-        bar.style.width = percent + "%";
-        
-        if (percent < 20) bar.style.backgroundColor = "#27ae60"; // Green
-        else if (percent < 60) bar.style.backgroundColor = "#e67e22"; // Orange
-        else bar.style.backgroundColor = "#c0392b"; // Red
-    }
-
-    // Initialize
-    document.getElementById('input-dx').addEventListener('input', updateSimulation);
-    document.getElementById('input-dy').addEventListener('input', updateSimulation);
-    document.getElementById('input-dz').addEventListener('input', updateSimulation);
-</script>
 
 </body>
 
